@@ -99,8 +99,9 @@ class SortingRobot:
         Sort the robot's list.
         """
         # Fill this out
-        self.set_light_on()
+        self.set_light_on()  # is_swapping = true
         self.swap_item()  # swap to item 0
+
         while self.light_is_on():
             while self.can_move_right():
                 if self.compare_item() == -1:  # pick up item if it is greater than held item
@@ -110,14 +111,14 @@ class SortingRobot:
                     self.move_right()
             if self.can_move_right() == False and self.compare_item() == None:
                 self.swap_item()
-                self.set_light_off()  # sorting done
+                self.set_light_off()  # is_swapping = false
             else:
                 while self.can_move_left():  # move left and drop item off where it was picked up
                     self.move_left()
                     if self.compare_item() == None:
-                        self.swap_item()
+                        self.swap_item()  # drop item where it was picked up
                         self.move_right()
-                        self.swap_item()
+                        self.swap_item()  # start again with next item
 
 
 if __name__ == "__main__":
