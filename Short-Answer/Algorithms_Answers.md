@@ -8,8 +8,7 @@ The number of operations for this algorithm scale linearly with n.
 b) O(n^2)
 The number of operations for this algorithm increase proportionaly with n^2
 
-c) O(2^n)
-The number of operations for this algorithm doubles as n increases because it is calling itself recursively.
+c) O(n)
 
 ## Exercise II
 
